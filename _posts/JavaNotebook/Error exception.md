@@ -1,0 +1,2 @@
+Error class：
+当一个动态链接失效或硬件错误，JVM抛出一个Error，一般的程序并不会捕获或者抛出Error

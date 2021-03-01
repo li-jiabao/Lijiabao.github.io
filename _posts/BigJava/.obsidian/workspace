@@ -1,0 +1,95 @@
+{
+  "main": {
+    "id": "c616fbfd1a2f2219",
+    "type": "split",
+    "children": [
+      {
+        "id": "15f35df5db2a54fd",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d5dd20cccba3c57f",
+    "type": "split",
+    "children": [
+      {
+        "id": "41014ecc8d46705b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0dc46c9d2e381536",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "2039c564966a2268",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "82c10e10979d5bcc",
+    "type": "split",
+    "children": [
+      {
+        "id": "22775c5d19263acd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd438d9aa076bc93",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "2D Graphics/Compositing Graphics.md",
+    "2D Graphics/Clipping the Drawing Region.md",
+    "2D Graphics/Advanced Topics in Java2D.md",
+    "2D Graphics/Advanced Text Display.md",
+    "2D Graphics/A Basic Printing Program.md",
+    "2D Graphics/Displaying Antialiased Text by Using Rendering Hints.md",
+    "2D Graphics/2D Graphics.md",
+    "Learning the Java Language/Annotations.md",
+    "Learning the Java Language/Abstract Methods and Classes.md"
+  ]
+}

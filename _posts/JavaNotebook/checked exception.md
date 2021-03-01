@@ -1,0 +1,3 @@
+Exception class：
+
+大部分程序抛出和捕获的异常都是Exception或者子类的对象。Exception代表发生了一个错误，但不是严重的错误。

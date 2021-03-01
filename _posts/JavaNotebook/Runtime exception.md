@@ -1,0 +1,3 @@
+RuntimeException class：
+
+这个错误主要是API的错误使用

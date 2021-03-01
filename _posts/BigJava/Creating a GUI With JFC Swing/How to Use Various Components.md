@@ -1,0 +1,36 @@
+
+# How to Use Various Components
+
+
+ Each of the following pages describes how to use a particular kind of Swing component.
+
+- [How to Make Applets](applet.html)
+- [How to Use Buttons, Check Boxes, and Radio Buttons](button.html)
+- [How to Use Color Choosers](colorchooser.html)
+- [How to Use Combo Boxes](combobox.html)
+- [How to Make Dialogs](dialog.html)
+- [How to Use Editor Panes and Text Panes](editorpane.html)
+- [How to Use File Choosers](filechooser.html)
+- [How to Use Formatted Text Fields](formattedtextfield.html)
+- [How to Make Frames (Main Windows)](frame.html)
+- [How to Use Internal Frames](internalframe.html)
+- [How to Use Labels](label.html)
+- [How to Use Layered Panes](layeredpane.html)
+- [How to Use Lists](list.html)
+- [How to Use Menus](menu.html)
+- [How to Use Panels](panel.html)
+- [How to Use Password Fields](passwordfield.html)
+- [How to Use Progress Bars](progress.html)
+- [How to Use Root Panes](rootpane.html)
+- [How to Use Scroll Panes](scrollpane.html)
+- [How to Use Separators](separator.html)
+- [How to Use Sliders](slider.html)
+- [How to Use Spinners](spinner.html)
+- [How to Use Split Panes](splitpane.html)
+- [How to Use Tabbed Panes](tabbedpane.html)
+- [How to Use Tables](table.html)
+- [How to Use Text Areas](textarea.html)
+- [How to Use Text Fields](textfield.html)
+- [How to Use Tool Bars](toolbar.html)
+- [How to Use Tool Tips](tooltip.html)
+- [How to Use Trees](tree.html)

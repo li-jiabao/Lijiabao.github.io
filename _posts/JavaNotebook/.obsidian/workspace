@@ -1,0 +1,128 @@
+{
+  "main": {
+    "id": "a60cc62e1da98f8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "53aead780c678497",
+        "type": "leaf",
+        "dimension": 44.206426484907496,
+        "pinned": true,
+        "state": {
+          "type": "graph",
+          "state": {},
+          "pinned": true
+        }
+      },
+      {
+        "id": "468ff45c301703e0",
+        "type": "leaf",
+        "dimension": 55.7935735150925,
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Inner class.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "84d19958ff084bef",
+    "type": "split",
+    "children": [
+      {
+        "id": "fdae28605dca6a54",
+        "type": "tabs",
+        "dimension": 69.13580246913581,
+        "children": [
+          {
+            "id": "072e5b6a9ca54792",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "b7a5d3e40780f15c",
+        "type": "tabs",
+        "dimension": 30.864197530864192,
+        "children": [
+          {
+            "id": "1cc3d630e071519e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 142
+  },
+  "right": {
+    "id": "d596956e5f6a5aaf",
+    "type": "split",
+    "children": [
+      {
+        "id": "333ac7080cfffee5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2186a1b4917c255a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Inner class.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0439369c13a2a6f5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Inner class.md",
+    "Annoymous class.md",
+    "Static inner class.md",
+    "Java OOP.md",
+    "Inheritance.md",
+    "Class.md",
+    "generic Array List.md",
+    "Generic.md",
+    "Object.md",
+    "Enum.md"
+  ]
+}

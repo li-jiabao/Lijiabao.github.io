@@ -1,0 +1,14 @@
+
+# Trail: Essential Classes
+
+This trail discusses classes from the Java platform that are essential to most programmers. <!--    EXCEPTIONS    -->
+
+[<img src="../images/coreIcon.gif" alt="Trail icon" align="left" width="20" height="20" border="0" /> **Exceptions**](exceptions/index.html) explains the exception mechanism and how it is used to handle errors and other exceptional conditions. This lesson describes what an exception is, how to throw and catch exceptions, what to do with an exception once it has been caught, and how to use the exception class hierarchy. <!--    I/O    -->
+
+[<img src="../images/coreIcon.gif" alt="Trail icon" align="left" width="20" height="20" border="0" /> **Basic I/O**](io/index.html) covers the Java platform classes used for basic input and output. It focuses primarily on **I/O Streams**, a powerful concept that greatly simplifies I/O operations. The lesson also looks at Serialization, which lets a program write whole objects out to streams and read them back again. Then the lesson looks at some file system operations, including random access files. Finally, it touchs briefly on the advanced features of the New I/O API. <!--    CONCURRENCY    -->
+
+[<img src="../images/coreIcon.gif" alt="Trail icon" align="left" width="20" height="20" border="0" /> **Concurrency**](concurrency/index.html) explains how to write applications that perform multiple tasks simultaneously. The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform's basic concurrency support and summarizes some of the high-level APIs in the `java.util.concurrent` packages. <!-- Environment -->
+
+[<img src="../images/coreIcon.gif" alt="Trail icon" align="left" width="20" height="20" border="0" /> **The Platform Environment**](environment/index.html) is defined by the underlying operating system, the Java virtual machine, the class libraries, and various configuration data supplied when the application is launched. This lesson describes some of the APIs an application uses to examine and configure its platform environment. <!-- Regular Expressions -->
+
+[<img src="../images/coreIcon.gif" alt="Trail icon" align="left" width="20" height="20" border="0" /> **Regular Expressions**](regex/index.html) are a way to describe a set of strings based on common characteristics shared by each string in the set. They can be used to search, edit, or manipulate text and data. Regular expressions vary in complexity, but once you understand the basics of how they're constructed, you'll be able to decipher (or create) any regular expression. This lesson teaches the regular expression syntax supported by the `java.util.regex` API, and presents several working examples to illustrate how the various objects interact.

@@ -1,0 +1,51 @@
+
+# How LDAP Error Codes Map to JNDI Exceptions
+
+The LDAP defines a set of status codes that are returned with LDAP responses sent by the LDAP server (see 
+[RFC 2251](http://www.ietf.org/rfc/rfc2251.txt)). In the JNDI, error conditions are indicated as checked exceptions that are subclasses of 
+[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html). See the 
+[Naming Exceptions](../ops/exception.html) section for an overview of the JNDI exception classes.
+
+The LDAP service provider translates the LDAP status code it receives from the LDAP server to the appropriate subclass of <tt>NamingException</tt>. The following table shows the mapping between LDAP status codes and JNDI exceptions.
+<th id="h1">LDAP Status Code</th><th id="h2">Meaning</th><th id="h3">Exception or Action</th>
+<td headers="h1">0</td><td headers="h2">Success</td><td headers="h3">Report success.</td>
+<td headers="h1">1</td><td headers="h2">Operations error</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
+<td headers="h1">2</td><td headers="h2">Protocol error</td><td headers="h3">[<tt>CommunicationException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/CommunicationException.html)</td>
+<td headers="h1">3</td><td headers="h2">Time limit exceeded.</td><td headers="h3">[<tt>TimeLimitExceededException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/TimeLimitExceededException.html)</td>
+<td headers="h1">4</td><td headers="h2">Size limit exceeded.</td><td headers="h3">[<tt>SizeLimitExceededException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/SizeLimitExceededException.html)</td>
+<td headers="h1">5</td><td headers="h2">Compared false.</td><td headers="h3">Used by [<tt>DirContext.search()</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#search-javax.naming.Name-javax.naming.directory.Attributes-). Does not generate an exception.</td>
+<td headers="h1">6</td><td headers="h2">Compared true.</td><td headers="h3">Used by [<tt>DirContext.search()</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#search-javax.naming.Name-javax.naming.directory.Attributes-). Does not generate an exception.</td>
+<td headers="h1">7</td><td headers="h2">Authentication method not supported.</td><td headers="h3">[<tt>AuthenticationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/AuthenticationNotSupportedException.html)</td>
+<td headers="h1">8</td><td headers="h2">Strong authentication required.</td><td headers="h3">[<tt>AuthenticationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/AuthenticationNotSupportedException.html)</td>
+<td headers="h1">9</td><td headers="h2">Partial results being returned.</td><td headers="h3">If the environment property <tt>"java.naming.referral"</tt> is set to <tt>"ignore"</tt> or the contents of the error do not contain a referral, throw a [<tt>PartialResultException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/PartialResultException.html). Otherwise, use contents to build a referral.</td>
+<td headers="h1">10</td><td headers="h2">Referral encountered.</td><td headers="h3">If the environment property <tt>"java.naming.referral"</tt> is set to <tt>"ignore"</tt>, then ignore. If the property is set to <tt>"throw"</tt>, throw [<tt>ReferralException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/ReferralException.html). If the property is set to <tt>"follow"</tt>, then the LDAP provider processes the referral. If the <tt>"java.naming.ldap.referral.limit"</tt> property has been exceeded, throw [<tt>LimitExceededException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/LimitExceededException.html).</td>
+<td headers="h1">11</td><td headers="h2">Administrative limit exceeded.</td><td headers="h3">[<tt>LimitExceededException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/LimitExceededException.html)</td>
+<td headers="h1">12</td><td headers="h2">Unavailable critical extension requested.</td><td headers="h3">[<tt>OperationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/OperationNotSupportedException.html)</td>
+<td headers="h1">13</td><td headers="h2">Confidentiality required.</td><td headers="h3">[<tt>AuthenticationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/AuthenticationNotSupportedException.html)</td>
+<td headers="h1">14</td><td headers="h2">SASL bind in progress.</td><td headers="h3">Used internally by the LDAP provider during authentication.</td>
+<td headers="h1">16</td><td headers="h2">No such attribute exists.</td><td headers="h3">[<tt>NoSuchAttributeException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/NoSuchAttributeException.html)</td>
+<td headers="h1">17</td><td headers="h2">An undefined attribute type.</td><td headers="h3">[<tt>InvalidAttributeIdentifierException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/InvalidAttributeIdentifierException.html)</td>
+<td headers="h1">18</td><td headers="h2">Inappropriate matching</td><td headers="h3">[<tt>InvalidSearchFilterException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/InvalidSearchFilterException.html)</td>
+<td headers="h1">19</td><td headers="h2">A constraint violation.</td><td headers="h3">[<tt>InvalidAttributeValueException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/InvalidAttributeValueException.html)</td>
+<td headers="h1">20</td><td headers="h2">An attribute or value already in use.</td><td headers="h3">[<tt>AttributeInUseException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/AttributeInUseException.html)</td>
+<td headers="h1">21</td><td headers="h2">An invalid attribute syntax.</td><td headers="h3">[<tt>InvalidAttributeValueException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/InvalidAttributeValueException.html)</td>
+<td headers="h1">32</td><td headers="h2">No such object exists.</td><td headers="h3">[<tt>NameNotFoundException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NameNotFoundException.html)</td>
+<td headers="h1">33</td><td headers="h2">Alias problem</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
+<td headers="h1">34</td><td headers="h2">An invalid DN syntax.</td><td headers="h3">[<tt>InvalidNameException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/InvalidNameException.html)</td>
+<td headers="h1">35</td><td headers="h2">Is a leaf.</td><td headers="h3">Used by the LDAP provider; usually doesn't generate an exception.</td>
+<td headers="h1">36</td><td headers="h2">Alias dereferencing problem</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
+<td headers="h1">48</td><td headers="h2">Inappropriate authentication</td><td headers="h3">[<tt>AuthenticationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/AuthenticationNotSupportedException.html)</td>
+<td headers="h1">49</td><td headers="h2">Invalid credentials</td><td headers="h3">[<tt>AuthenticationException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/AuthenticationException.html)</td>
+<td headers="h1">50</td><td headers="h2">Insufficient access rights</td><td headers="h3">[<tt>NoPermissionException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NoPermissionException.html)</td>
+<td headers="h1">51</td><td headers="h2">Busy</td><td headers="h3">[<tt>ServiceUnavailableException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/ServiceUnavailableException.html)</td>
+<td headers="h1">52</td><td headers="h2">Unavailable</td><td headers="h3">[<tt>ServiceUnavailableException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/ServiceUnavailableException.html)</td>
+<td headers="h1">53</td><td headers="h2">Unwilling to perform</td><td headers="h3">[<tt>OperationNotSupportedException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/OperationNotSupportedException.html)</td>
+<td headers="h1">54</td><td headers="h2">Loop detected.</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
+<td headers="h1">64</td><td headers="h2">Naming violation</td><td headers="h3">[<tt>InvalidNameException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/InvalidNameException.html)</td>
+<td headers="h1">65</td><td headers="h2">Object class violation</td><td headers="h3">[<tt>SchemaViolationException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SchemaViolationException.html)</td>
+<td headers="h1">66</td><td headers="h2">Not allowed on non-leaf.</td><td headers="h3">[<tt>ContextNotEmptyException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/ContextNotEmptyException.html)</td>
+<td headers="h1">67</td><td headers="h2">Not allowed on RDN.</td><td headers="h3">[<tt>SchemaViolationException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SchemaViolationException.html)</td>
+<td headers="h1">68</td><td headers="h2">Entry already exists.</td><td headers="h3">[<tt>NameAlreadyBoundException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NameAlreadyBoundException.html)</td>
+<td headers="h1">69</td><td headers="h2">Object class modifications prohibited.</td><td headers="h3">[<tt>SchemaViolationException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SchemaViolationException.html)</td>
+<td headers="h1">71</td><td headers="h2">Affects multiple DSAs.</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
+<td headers="h1">80</td><td headers="h2">Other</td><td headers="h3">[<tt>NamingException</tt>](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html)</td>
