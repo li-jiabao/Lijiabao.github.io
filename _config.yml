@@ -3,7 +3,7 @@ subtitle: Lijiabao's Blog
 description: >- # this means to ignore newlines until "baseurl:"
   devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
 
-url: "https://li-jiabao.github.io/" # the base hostname & protocol for your site, e.g. https://example.github.io
+url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
 urls:
@@ -14,13 +14,13 @@ urls:
     - text: Blog
       url: /blog
     - text: Category
-      url: /category
+      url: /categories
     - text: Gallery
       url: /gallery
-    - text: Shop
-      url : /shop
-    - text: Contact
-      url : /contact
+    # - text: Shop
+    #   url : /shop
+    # - text: Contact
+    #   url : /contact
     - text: Styleguide
       url: /styleguide
     - text: Get Started
@@ -44,12 +44,12 @@ author_work_experiences:
               designation: Students
               description: Postgraduate
               visibility: true
-            - company_name: Microsoft
-              company_logo: microsoft.png
-              company_url: https://microsoft.com
-              designation: Azure Developer
-              description: Worked on various Azure Cloud Products
-              visibility: true
+            # - company_name: Microsoft
+            #   company_logo: microsoft.png
+            #   company_url: https://microsoft.com
+            #   designation: Azure Developer
+            #   description: Worked on various Azure Cloud Products
+            #   visibility: true
 
 # Education
 author_education_details:
@@ -62,16 +62,16 @@ author_education_details:
 
 # Projects
 author_project_details:
-              - project_thumbnail: gamershub.png
-                project_title: Gamers Hub
-                project_description: A Platform built for Gamers and Game Devs
-                project_url: https://gamershub.in
-                visibility: true
-              - project_thumbnail: hack4r.PNG
-                project_title: Hack4r
-                project_description: A Platform built for Hackers and Penetration Testers
-                project_url: https://hack4r.com
-                visibility: true
+              # - project_thumbnail: gamershub.png
+              #   project_title: Gamers Hub
+              #   project_description: A Platform built for Gamers and Game Devs
+              #   project_url: https://gamershub.in
+              #   visibility: true
+              # - project_thumbnail: hack4r.PNG
+              #   project_title: Hack4r
+              #   project_description: A Platform built for Hackers and Penetration Testers
+              #   project_url: https://hack4r.com
+              #   visibility: true
 
 # social links
 twitter_username: ""
@@ -146,12 +146,6 @@ defaults:
       permalink: /blog/authors/:slug
 
 # Build settings
-plugins:
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-menus
 
 
 # Exclude from processing.
