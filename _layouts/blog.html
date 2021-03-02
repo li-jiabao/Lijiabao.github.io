@@ -19,9 +19,6 @@ layout: default
                               <span class="disqus-comment-count" data-disqus-identifier="{{ post.url }}"></span>
 
                           </div>
-                          <div class="card-img-top">
-                            {{ post.excerpt | markdownify | truncate:100 }}
-                          </div>
                       </div>
                       {% endfor %}
                   </div>
