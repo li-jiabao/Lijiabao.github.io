@@ -45,7 +45,6 @@ layout: default
                    />
                     {% endif %}
                   {% endif %}
-
                 </div>
                 <div id="article-link">
                     <p class="recent-article-link">{{post.title}} <span style="color: #ccc; font-size: 15px;"> - <i><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></i></span></p>
@@ -54,10 +53,8 @@ layout: default
                   {% for cat in post.category limit:1 %}
                    <button class="btn btn-sm btn-dark">{{cat}}</button>
                   {% endfor %}
+                  <p>{{ post.excerpt | markdownify | truncate:50 }}</p>
                   </div>
-                <div>
-                  {{post.excerpt}}
-                </div>
               </div>
             </a>
           </li>

@@ -8,9 +8,6 @@ layout: default
                   <div class="row">
                       {% for post in paginator.posts %}
                       <div class="card blog-post">
-                          <div class="card-img-top">
-                            {{ post.excerpt | markdownify | truncate:100 }}
-                          </div>
                           <div class="card-body center">
                               <!-- <img src="{{site.url}}{{site.baseurl}}/assets/img/{{ site.author_logo }}" class="author-profile-img"> -->
                               <h4 class="card-title">{{ post.title }}</h4>
@@ -21,6 +18,9 @@ layout: default
                               <a href="{{ post.url | prepend: site.baseurl }}" data-disqus-identifier="{{ post.url }}" class="btn btn-dark btn-lg">Read</a>
                               <span class="disqus-comment-count" data-disqus-identifier="{{ post.url }}"></span>
 
+                          </div>
+                          <div class="card-img-top">
+                            {{ post.excerpt | markdownify | truncate:100 }}
                           </div>
                       </div>
                       {% endfor %}
