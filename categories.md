@@ -1,6 +1,6 @@
 ---
 layout: categories
 title: Categories
-icon: fas fa-stream
-order: 1
+menus: header
+permalink: /categories/
 ---
